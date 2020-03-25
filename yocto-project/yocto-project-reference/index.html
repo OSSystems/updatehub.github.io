@@ -1,0 +1,1091 @@
+
+
+
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      <meta http-equiv="x-ua-compatible" content="ie=edge">
+      
+        <meta name="description" content="All your devices, always updated">
+      
+      
+      
+      
+        <meta name="lang:clipboard.copy" content="Copy to clipboard">
+      
+        <meta name="lang:clipboard.copied" content="Copied to clipboard">
+      
+        <meta name="lang:search.language" content="en">
+      
+        <meta name="lang:search.pipeline.stopwords" content="True">
+      
+        <meta name="lang:search.pipeline.trimmer" content="True">
+      
+        <meta name="lang:search.result.none" content="No matching documents">
+      
+        <meta name="lang:search.result.one" content="1 matching document">
+      
+        <meta name="lang:search.result.other" content="# matching documents">
+      
+        <meta name="lang:search.tokenizer" content="[\s\-]+">
+      
+      <link rel="shortcut icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.6.0">
+    
+    
+      
+        <title>Yocto Project reference - UpdateHub</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/application.1b62728e.css">
+      
+        <link rel="stylesheet" href="../../assets/stylesheets/application-palette.a8b3c06d.css">
+      
+      
+        
+        
+        <meta name="theme-color" content="#3f51b5">
+      
+    
+    
+      <script src="../../assets/javascripts/modernizr.268332fc.js"></script>
+    
+    
+      
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
+      
+    
+    <link rel="stylesheet" href="../../assets/fonts/material-icons.css">
+    
+      <link rel="manifest" href="../../manifest.webmanifest">
+    
+    
+    
+      
+        
+<script>
+  window.ga = window.ga || function() {
+    (ga.q = ga.q || []).push(arguments)
+  }
+  ga.l = +new Date
+  /* Setup integration and send page view */
+  ga("create", "UA-XXXXXXXX-X", "auto")
+  ga("set", "anonymizeIp", true)
+  ga("send", "pageview")
+  /* Register handler to log search on blur */
+  document.addEventListener("DOMContentLoaded", () => {
+    if (document.forms.search) {
+      var query = document.forms.search.query
+      query.addEventListener("blur", function() {
+        if (this.value) {
+          var path = document.location.pathname;
+          ga("send", "pageview", path + "?q=" + this.value)
+        }
+      })
+    }
+  })
+</script>
+<script async src="https://www.google-analytics.com/analytics.js"></script>
+      
+    
+    
+  </head>
+  
+    
+    
+    <body dir="ltr" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    <svg class="md-svg">
+      <defs>
+        
+        
+          <svg xmlns="http://www.w3.org/2000/svg" width="416" height="448" viewBox="0 0 416 448" id="__github"><path fill="currentColor" d="M160 304q0 10-3.125 20.5t-10.75 19T128 352t-18.125-8.5-10.75-19T96 304t3.125-20.5 10.75-19T128 256t18.125 8.5 10.75 19T160 304zm160 0q0 10-3.125 20.5t-10.75 19T288 352t-18.125-8.5-10.75-19T256 304t3.125-20.5 10.75-19T288 256t18.125 8.5 10.75 19T320 304zm40 0q0-30-17.25-51T296 232q-10.25 0-48.75 5.25Q229.5 240 208 240t-39.25-2.75Q130.75 232 120 232q-29.5 0-46.75 21T56 304q0 22 8 38.375t20.25 25.75 30.5 15 35 7.375 37.25 1.75h42q20.5 0 37.25-1.75t35-7.375 30.5-15 20.25-25.75T360 304zm56-44q0 51.75-15.25 82.75-9.5 19.25-26.375 33.25t-35.25 21.5-42.5 11.875-42.875 5.5T212 416q-19.5 0-35.5-.75t-36.875-3.125-38.125-7.5-34.25-12.875T37 371.5t-21.5-28.75Q0 312 0 260q0-59.25 34-99-6.75-20.5-6.75-42.5 0-29 12.75-54.5 27 0 47.5 9.875t47.25 30.875Q171.5 96 212 96q37 0 70 8 26.25-20.5 46.75-30.25T376 64q12.75 25.5 12.75 54.5 0 21.75-6.75 42 34 40 34 99.5z"/></svg>
+        
+      </defs>
+    </svg>
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
+    
+      <a href="#yocto-project-reference" tabindex="1" class="md-skip">
+        Skip to content
+      </a>
+    
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <a href="../.." title="UpdateHub" class="md-header-nav__button md-logo">
+          
+            <img src="../../img/assets/favicon.ico" width="24" height="24">
+          
+        </a>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="__drawer"></label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
+          
+            <span class="md-header-nav__topic">
+              UpdateHub
+            </span>
+            <span class="md-header-nav__topic">
+              
+                Yocto Project reference
+              
+            </span>
+          
+        </div>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        
+          <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
+          
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
+      <label class="md-icon md-search__icon" for="__search"></label>
+      <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
+        &#xE5CD;
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result">
+          <div class="md-search-result__meta">
+            Type to start searching
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+        
+      </div>
+      
+        <div class="md-flex__cell md-flex__cell--shrink">
+          <div class="md-header-nav__source">
+            
+
+
+  
+
+<a href="https://github.com/UpdateHub/updatehub.github.io/" title="Go to repository" class="md-source" data-md-source="github">
+  
+    <div class="md-source__icon">
+      <svg viewBox="0 0 24 24" width="24" height="24">
+        <use xlink:href="#__github" width="24" height="24"></use>
+      </svg>
+    </div>
+  
+  <div class="md-source__repository">
+    UpdateHub/updatehub.github.io
+  </div>
+</a>
+          </div>
+        </div>
+      
+    </div>
+  </nav>
+</header>
+    
+    <div class="md-container">
+      
+        
+      
+      
+        
+
+  
+
+<nav class="md-tabs md-tabs--active" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  <li class="md-tabs__item">
+    
+      <a href="../.." class="md-tabs__link">
+        Introduction
+      </a>
+    
+  </li>
+
+      
+        
+      
+        
+      
+        
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../updatehub-cloud/dashboard/" class="md-tabs__link">
+          Using UpdateHub Cloud
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../yocto-project-guide/" class="md-tabs__link md-tabs__link--active">
+          Integrating with Yocto Project
+        </a>
+      
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+      
+      <main class="md-main" role="main">
+        <div class="md-main__inner md-grid" data-md-component="container">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" data-md-level="0">
+  <label class="md-nav__title md-nav__title--site" for="__drawer">
+    <a href="../.." title="UpdateHub" class="md-nav__button md-logo">
+      
+        <img src="../../img/assets/favicon.ico" width="48" height="48">
+      
+    </a>
+    UpdateHub
+  </label>
+  
+    <div class="md-nav__source">
+      
+
+
+  
+
+<a href="https://github.com/UpdateHub/updatehub.github.io/" title="Go to repository" class="md-source" data-md-source="github">
+  
+    <div class="md-source__icon">
+      <svg viewBox="0 0 24 24" width="24" height="24">
+        <use xlink:href="#__github" width="24" height="24"></use>
+      </svg>
+    </div>
+  
+  <div class="md-source__repository">
+    UpdateHub/updatehub.github.io
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../.." title="Introduction" class="md-nav__link">
+      Introduction
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../what-is-updatehub/" title="What is UpdateHub" class="md-nav__link">
+      What is UpdateHub
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../quick-starting-with-raspberrypi3/" title="Quick starting with Raspberry Pi 3" class="md-nav__link">
+      Quick starting with Raspberry Pi 3
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../faq/faq-questions/" title="FAQ" class="md-nav__link">
+      FAQ
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5">
+    
+    <label class="md-nav__link" for="nav-5">
+      Using UpdateHub Cloud
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-5">
+        Using UpdateHub Cloud
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../updatehub-cloud/dashboard/" title="UpdateHub Cloud dashboard" class="md-nav__link">
+      UpdateHub Cloud dashboard
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../updatehub-cloud/product/" title="Managing a Product" class="md-nav__link">
+      Managing a Product
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../updatehub-cloud/device/" title="Handling a Device" class="md-nav__link">
+      Handling a Device
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../updatehub-cloud/package-rollout/" title="Package and Rollout" class="md-nav__link">
+      Package and Rollout
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../updatehub-cloud/menu/" title="Your menu account" class="md-nav__link">
+      Your menu account
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-6" type="checkbox" id="nav-6" checked>
+    
+    <label class="md-nav__link" for="nav-6">
+      Integrating with Yocto Project
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-6">
+        Integrating with Yocto Project
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../yocto-project-guide/" title="Yocto Project guide" class="md-nav__link">
+      Yocto Project guide
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Yocto Project reference
+      </label>
+    
+    <a href="./" title="Yocto Project reference" class="md-nav__link md-nav__link--active">
+      Yocto Project reference
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#supported-version" class="md-nav__link">
+    Supported version
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#adding-layer-to-your-project" class="md-nav__link">
+    Adding layer to your project
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#using-updatehub-platform" class="md-nav__link">
+    Using UpdateHub Platform
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#adding-the-layers-manually" class="md-nav__link">
+    Adding the layers manually
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#configurating-updatehub-variables" class="md-nav__link">
+    Configurating UpdateHub variables
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#cases-of-adding-layers-manually" class="md-nav__link">
+    Cases of adding layers manually
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#rsa-key" class="md-nav__link">
+    RSA Key
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#generating-a-rsa-key" class="md-nav__link">
+    Generating a RSA Key
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setting-up-rsa-key" class="md-nav__link">
+    Setting up RSA Key
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pushing-an-update-package" class="md-nav__link">
+    Pushing an update package
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../glossary/" title="Glossary of variables" class="md-nav__link">
+      Glossary of variables
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#supported-version" class="md-nav__link">
+    Supported version
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#adding-layer-to-your-project" class="md-nav__link">
+    Adding layer to your project
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#using-updatehub-platform" class="md-nav__link">
+    Using UpdateHub Platform
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#adding-the-layers-manually" class="md-nav__link">
+    Adding the layers manually
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#configurating-updatehub-variables" class="md-nav__link">
+    Configurating UpdateHub variables
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#cases-of-adding-layers-manually" class="md-nav__link">
+    Cases of adding layers manually
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#rsa-key" class="md-nav__link">
+    RSA Key
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#generating-a-rsa-key" class="md-nav__link">
+    Generating a RSA Key
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setting-up-rsa-key" class="md-nav__link">
+    Setting up RSA Key
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pushing-an-update-package" class="md-nav__link">
+    Pushing an update package
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                  <a href="https://github.com/UpdateHub/updatehub.github.io/edit/master/docs/yocto-project/yocto-project-reference.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
+                
+                
+                <h1 id="yocto-project-reference">Yocto Project reference<a class="headerlink" href="#yocto-project-reference" title="Permanent link">&para;</a></h1>
+<p>In this section we cover the topics that involve <strong>UpdateHub</strong> with <strong>Yocto Project</strong> such as adding UpdateHub layers, setting variables, access keys and glossary. review</p>
+<h2 id="supported-version">Supported version<a class="headerlink" href="#supported-version" title="Permanent link">&para;</a></h2>
+<p>The <strong>UpdateHub</strong> offers a high quality integration for the <strong>Yocto Project</strong> and provides a ready to use support for a number of boards (<strong>RaspberryPi</strong>, <strong>Texas Instruments</strong> e <strong>Freescale</strong>). Every six months, a new version of <strong>Yocto Project</strong> is released.</p>
+<p>The current version is the <strong>Yocto Project</strong> 3.0, codename <em>Zeus</em>, and its support is provided by the <em>meta-updatehub</em> layer. This layer provides all the infrastructure code to enable the use of <strong>Yocto Project</strong> together with the <strong>UpdateHub</strong>. The minimal set of layers to use the <strong>UpdateHub</strong> are:</p>
+<table>
+<thead>
+<tr>
+<th>Layer name</th>
+<th>Branch name</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>poky</td>
+<td>zeus</td>
+</tr>
+<tr>
+<td>meta-openembedded/meta-oe</td>
+<td>zeus</td>
+</tr>
+<tr>
+<td>meta-openembedded/meta-python</td>
+<td>zeus</td>
+</tr>
+<tr>
+<td>meta-updatehub</td>
+<td>zeus</td>
+</tr>
+</tbody>
+</table>
+<p>Besides the basic support, there are many boards with <strong>UpdateHub</strong> support, provided by extra BSP integration layers, as shown at the table below:</p>
+<table>
+<thead>
+<tr>
+<th>Board full name</th>
+<th>BSP layer name</th>
+<th>Machine name</th>
+<th>Branch name</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>BeagleBone Black</td>
+<td><a href="https://github.com/updatehub/meta-updatehub-ti/tree/zeus">meta-updatehub-ti</a></td>
+<td>beaglebone</td>
+<td>zeus</td>
+</tr>
+<tr>
+<td>Raspberry Pi 3</td>
+<td><a href="https://github.com/updatehub/meta-updatehub-raspberrypi/tree/zeus">meta-updatehub-raspberrypi</a></td>
+<td>raspberrypi3</td>
+<td>zeus</td>
+</tr>
+<tr>
+<td>NXP i.MX6QP/Q/DL SABRE Smart Device</td>
+<td><a href="https://github.com/updatehub/meta-updatehub-freescale/tree/zeus">meta-updatehub-freescale</a></td>
+<td>imx6qdlsabresd</td>
+<td>zeus</td>
+</tr>
+<tr>
+<td>Boundary Devices Nitrogen6X</td>
+<td><a href="https://github.com/updatehub/meta-updatehub-freescale/tree/zeus">meta-updatehub-freescale</a></td>
+<td>nitrogen6x</td>
+<td>zeus</td>
+</tr>
+<tr>
+<td>Boundary Devices i.MX6 SABRELite</td>
+<td><a href="https://github.com/updatehub/meta-updatehub-freescale/tree/zeus">meta-updatehub-freescale</a></td>
+<td>nitrogen6x</td>
+<td>zeus</td>
+</tr>
+<tr>
+<td>TechNexion i.MX7 PICO</td>
+<td><a href="https://github.com/updatehub/meta-updatehub-freescale/tree/zeus">meta-updatehub-freescale</a></td>
+<td>imx7d-pico</td>
+<td>zeus</td>
+</tr>
+<tr>
+<td>Toradex Apalis iMX6Q/D</td>
+<td><a href="https://github.com/updatehub/meta-updatehub-freescale/tree/zeus">meta-updatehub-freescale</a></td>
+<td>apalis-imx6</td>
+<td>zeus</td>
+</tr>
+<tr>
+<td>WaRP7</td>
+<td><a href="https://github.com/updatehub/meta-updatehub-freescale/tree/zeus">meta-updatehub-freescale</a></td>
+<td>imx7s-warp</td>
+<td>zeus</td>
+</tr>
+<tr>
+<td>Wandboard i.MX6 QuadPlus/Quad/Dual/Solo</td>
+<td><a href="https://github.com/updatehub/meta-updatehub-freescale/tree/zeus">meta-updatehub-freescale</a></td>
+<td>wandboard</td>
+<td>zeus</td>
+</tr>
+</tbody>
+</table>
+<p>If you need to use an earlier <strong>Yocto Project</strong> version, the <strong>UpdateHub</strong> is also supported. Currently, there is support for following previous <strong>Yocto Project</strong> versions:</p>
+<ul>
+<li>Yocto Project 2.1, codename <em>Krogoth</em></li>
+<li>Yocto Project 2.2, codename <em>Morty</em></li>
+<li>Yocto Project 2.3, codename <em>Pyro</em></li>
+<li>Yocto Project 2.4, codename <em>Rocko</em></li>
+<li>Yocto Project 2.5, codename <em>Sumo</em></li>
+<li>Yocto Project 2.6, codename <em>Thud</em></li>
+<li>Yocto Project 2.7, codename <em>Warrior</em></li>
+<li>Yocto Project 3.0, codename <em>Zeus</em></li>
+</ul>
+<div class="admonition danger">
+<p>These earlier versions are actively supported by the <strong>UpdateHub</strong>, but features and compatible machines may vary among them.</p>
+</div>
+<h2 id="adding-layer-to-your-project">Adding layer to your project<a class="headerlink" href="#adding-layer-to-your-project" title="Permanent link">&para;</a></h2>
+<p>The first step is initialize the environment to build a <strong>Linux</strong> image
+using <strong>Yocto Project</strong>. To start working with <strong>Yocto Project</strong> we
+need to fetch all the needed layers, that includes the <strong>poky</strong>,
+<em>meta-openembedded</em>, <em>meta-raspberrypi</em>, <em>meta-updatehub</em> and
+<em>meta-updatehub-raspberrypi</em> layers. </p>
+<p>The <a href="https://github.com/UpdateHub/meta-updatehub">meta-updatehub</a> is the
+layer that adds support to <strong>UpdateHub</strong> itself, and
+<a href="https://github.com/UpdateHub/meta-updatehub-raspberrypi">meta-updatehub-raspberrypi</a>
+includes <strong>UpdateHub</strong> support for <strong>Raspberry Pi</strong> machines. In addition, we need to get the <em>meta-openembedded</em> layer, because <strong>UpdateHub</strong> has some dependencies, such as <strong>Python 3</strong> packages to create the <a href="https://github.com/UpdateHub/uhu">uhu</a> utility used as UpdateHub package manager and will be covered in this guide.</p>
+<p>Here we will show you two different approaches to download the necessary layers to support <strong>UpdateHub</strong>: one <a href="#using-updatehub-platform">using a platform</a> which will download the necessary layers and add them automatically to the project, the other approach is to <a href="#adding-the-layers-manually">manually download</a> and add these layers.</p>
+<h3 id="using-updatehub-platform">Using UpdateHub Platform<a class="headerlink" href="#using-updatehub-platform" title="Permanent link">&para;</a></h3>
+<p>To get a platform you need have <a href="https://gerrit.googlesource.com/git-repo/"><em>Repo</em></a> installed. Repo is a tool that helps manage many Git repositories, uploading to revision control systems and automating parts of the development workflow.</p>
+<p>Install the repo utility:</p>
+<div class="codehilite"><pre><span></span>mkdir ~/bin
+curl http://commondatastorage.googleapis.com/git-repo-downloads/repo &gt; ~/bin/repo
+chmod a+x ~/bin/repo
+</pre></div>
+
+
+<p>Download the platform source:</p>
+<div class="codehilite"><pre><span></span>PATH=${PATH}:~/bin
+mkdir updatehub-platform
+cd updatehub-platform
+repo init -u https://github.com/UpdateHub/updatehub-yocto-project-reference-platform.git -b zeus
+repo sync
+</pre></div>
+
+
+<p>Setup the environment:</p>
+<div class="codehilite"><pre><span></span>source ./setup-environment build
+</pre></div>
+
+
+<p>At the end of the commands you have every metadata you need to start working.</p>
+<h3 id="adding-the-layers-manually">Adding the layers manually<a class="headerlink" href="#adding-the-layers-manually" title="Permanent link">&para;</a></h3>
+<p>To include the <strong>updatehub</strong> Yocto layers in your build is easy just clone the
+meta-updatehub layer and the machine support layer to your sources directory following the commands below:</p>
+<div class="codehilite"><pre><span></span>git clone https://github.com/openembedded/meta-openembedded -b zeus
+git clone https://github.com/UpdateHub/meta-updatehub -b zeus
+</pre></div>
+
+
+<p>In <em>/build</em> folder of your project include:</p>
+<div class="codehilite"><pre><span></span>bitbake-layers add-layer ../meta-openembedded/meta-oe
+bitbake-layers add-layer ../meta-openembedded/meta-python
+bitbake-layers add-layer ../meta-openembedded/meta-networking
+bitbake-layers add-layer ../meta-updatehub
+</pre></div>
+
+
+<p>For <strong>Raspberry Pi</strong> 3, you can do that using:</p>
+<div class="codehilite"><pre><span></span>git clone https://github.com/UpdateHub/meta-updatehub-raspberrypi
+</pre></div>
+
+
+<p>In <em>/build</em> folder of your project include:</p>
+<div class="codehilite"><pre><span></span>bitbake-layers add-layer ../meta-updatehub-raspberrypi/
+</pre></div>
+
+
+<p>For <strong>BeagleBone Black</strong>, you can use:</p>
+<div class="codehilite"><pre><span></span>git clone https://github.com/UpdateHub/meta-updatehub-ti
+</pre></div>
+
+
+<p>In <em>/build</em> folder of your project include:</p>
+<div class="codehilite"><pre><span></span>bitbake-layers add-layer ../meta-updatehub-ti/
+</pre></div>
+
+
+<p>And for <strong>imx6qdlsabresd</strong>, use:</p>
+<div class="codehilite"><pre><span></span>git clone https://github.com/UpdateHub/meta-updatehub-freescale
+</pre></div>
+
+
+<p>In <em>/build</em> folder of your project include:</p>
+<div class="codehilite"><pre><span></span>bitbake-layers add-layer ../meta-updatehub-freescale/
+</pre></div>
+
+
+<p>Done! Now you have the <strong>UpdateHub</strong> layer in your project.</p>
+<h2 id="configurating-updatehub-variables">Configurating UpdateHub variables<a class="headerlink" href="#configurating-updatehub-variables" title="Permanent link">&para;</a></h2>
+<p>You should now to include <em>UpdateHub</em> system variables in <em>conf/local.conf</em>. The variables below are the basics for the correct configuration. More details and options see <a href="../glossary">Glossary of variables</a>.</p>
+<p><em>UPDATEHUB_PRODUCT_UID</em> - identifies the product id in use and this is used by
+rollouts. It is <a href="../../updatehub-cloud/product/#how-to-create-a-product">generate</a> in create process ends or you get this code in <strong>UpdateHub</strong> Dashboard, in <em>Product</em> page.</p>
+<p><em>UPDATEHUB_ACCESS_ID</em> and <em>UPDATEHUB_ACCESS_SECRET</em> - They can be <a href="../../updatehub-cloud/#requesting-a-access-key">generate</a> in <em>Settings</em> available in right top of screen and are necessary for server connection. </p>
+<p><em>UPDATEHUB_PACKAGE_VERSION_SUFFIX</em> - added optionally, is advised for version organization.</p>
+<p>Finally the final of your local.conf file should seem like this.</p>
+<div class="codehilite"><pre><span></span>UPDATEHUB_PRODUCT_UID = &quot;05344b71c3e9f8...&quot;
+UPDATEHUB_ACCESS_ID = &quot;your-email@gmail.com-8bc21121049af...&quot;
+UPDATEHUB_ACCESS_SECRET = &quot;9b1fcee96795fa5dea5cd04cb1d2...&quot;
+UPDATEHUB_PACKAGE_VERSION_SUFFIX = &quot;-test-image-1.0&quot;
+</pre></div>
+
+
+<h3 id="cases-of-adding-layers-manually">Cases of adding layers manually<a class="headerlink" href="#cases-of-adding-layers-manually" title="Permanent link">&para;</a></h3>
+<div class="admonition danger">
+<p class="admonition-title">If you have used the platform, the process below is not necessary, because the platform already has <em>updatehub-image</em> class configured.</p>
+</div>
+<p>In case you are not using the platform, in addition to the variable configuration specified above, you will need to add <em>update-image</em> class of <strong>UpdateHub</strong> in your project recipe for to use the setting available. For this you must include "inherit updatehub-image" in <em>myproject/../my-image.bb</em> or just to add "updatehub-image" in <em>inherit</em> if this exists.   </p>
+<p>The your new image with <strong>UpdateHub</strong> support layer is ready. </p>
+<h2 id="rsa-key">RSA Key<a class="headerlink" href="#rsa-key" title="Permanent link">&para;</a></h2>
+<p>RSA keys are asymmetric encryption keys that serve to provide greater security in communications. </p>
+<p>The <strong>UpdateHub</strong> verifies the authenticity of every <em>Package</em> update prior applying it. To do so, it uses a RSA key that to check if the <em>Package</em> has not been modified or corrupted by any means. Each device will contain the public key, <em>public_key.pem</em>, included on the device image, which will validate any received * Package<em> before unpacking, which must have been signed with the private key, </em>private_key.pem*, when generating the update package.</p>
+<div class="admonition danger">
+<p class="admonition-title">Although these keys are not mandatory on UpdateHub, we advise their use as an additional data protection mechanism.</p>
+</div>
+<p>In this session we will cover:</p>
+<ul>
+<li><a href="#generating-a-rsa-key">Generating a RSA Key</a></li>
+<li><a href="#setting-up-rsa-key">Setting up RSA Key</a></li>
+</ul>
+<h3 id="generating-a-rsa-key">Generating a RSA Key<a class="headerlink" href="#generating-a-rsa-key" title="Permanent link">&para;</a></h3>
+<p>The generation of the RSA keys requires the <em>openssl</em> utility. The private RSA key is generated using the command below:</p>
+<div class="codehilite"><pre><span></span>mkdir -p ~/updatehub-keys
+openssl genpkey -algorithm RSA -out ~/updatehub-keys/private_key.pem -pkeyopt rsa_keygen_bits:4096
+</pre></div>
+
+
+<p>Next we need to extract the public RSA key from the private key. Use the following command:</p>
+<div class="codehilite"><pre><span></span>openssl rsa -pubout -in ~/updatehub-keys/private_key.pem -out ~/updatehub-keys/public_key.pem
+</pre></div>
+
+
+<h3 id="setting-up-rsa-key">Setting up RSA Key<a class="headerlink" href="#setting-up-rsa-key" title="Permanent link">&para;</a></h3>
+<p>The keys need to be enabled inside your <strong>Yocto Project</strong> build configuration, so <strong>UpdateHub</strong> can deploy the public key inside the generated image and use the private key to sign the update package. You must set the <em>UPDATEHUB_UHUPKG_PRIVATE_KEY</em> and <em>UPDATEHUB_UHUPKG_PRIVATE_KEY</em> variables inside your <em>conf/local.conf</em> file as seen next:</p>
+<div class="codehilite"><pre><span></span>UPDATEHUB_UHUPKG_PRIVATE_KEY = &quot;~/updatehub-keys/private_key.pem&quot;
+UPDATEHUB_UHUPKG_PUBLIC_KEY = &quot;~/updatehub-keys/public_key.pem&quot;
+</pre></div>
+
+
+<div class="admonition danger">
+<p class="admonition-title">Keep save your RSA keys</p>
+<p>Once a device is deployed using a RSA key, the same key is used to validate every update package send to this device. It is important to keep the RSA keys safe or you'll not be able to send updates for those devices.</p>
+</div>
+<h2 id="pushing-an-update-package">Pushing an update package<a class="headerlink" href="#pushing-an-update-package" title="Permanent link">&para;</a></h2>
+<p>The <strong>UpdateHub</strong> works with upkg format for update package, and this is generated by the <em>uhu</em>. 
+Update Utilities or <em>uhu</em> is an interactive prompt and a command line utility to manage update packages for UpdateHub agent and will provide you few new <strong>BitBake</strong> tasks, like this:</p>
+<p><em>uhupush</em>: sends the update package to the <strong>UpdateHub</strong> Cloud. The generation of an update package is very simple. After the integration of the <strong>UpdateHub</strong> with your <strong>Yocto Project</strong> build is complete, the <strong>Bitbake</strong> tool can be used to generate and upload the update package. The following command does all the needed work in order to push the packages to the <strong>UpdateHub</strong> Cloud:</p>
+<div class="codehilite"><pre><span></span>bitbake &lt;image&gt; -c uhupush
+</pre></div>
+
+
+<p>After running this, the <strong>UpdateHub</strong> Cloud will display that there is a new <em>Package</em> to update the <em>Devices</em> and you may start a <em>Rollout</em> through the interface.</p>
+<p>For more details or uhu install access <a href="https://github.com/UpdateHub/uhu">UpdateHub Utilities</a>.</p>
+                
+                  
+                
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+        
+          <a href="../yocto-project-guide/" title="Yocto Project guide" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+            </div>
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                Yocto Project guide
+              </span>
+            </div>
+          </a>
+        
+        
+          <a href="../glossary/" title="Glossary of variables" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                Glossary of variables
+              </span>
+            </div>
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+          <div class="md-footer-copyright__highlight">
+            Copyright &copy; 2020 O.S. Systems
+          </div>
+        
+        powered by
+        <a href="https://www.mkdocs.org">MkDocs</a>
+        and
+        <a href="https://squidfunk.github.io/mkdocs-material/">
+          Material for MkDocs</a>
+      </div>
+      
+  <div class="md-footer-social">
+    <link rel="stylesheet" href="../../assets/fonts/font-awesome.css">
+    
+      <a href="https://github.com/OSSystems" class="md-footer-social__link fa fa-github"></a>
+    
+      <a href="https://twitter.com/OSSystemsNews?s=20" class="md-footer-social__link fa fa-twitter"></a>
+    
+      <a href="https://www.linkedin.com/company/ossystems" class="md-footer-social__link fa fa-linkedin"></a>
+    
+  </div>
+
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../../assets/javascripts/application.808e90bb.js"></script>
+      
+      <script>app.initialize({version:"1.0.4",url:{base:"../.."}})</script>
+      
+    
+  </body>
+</html>

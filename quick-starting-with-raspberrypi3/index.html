@@ -1,0 +1,1079 @@
+
+
+
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      <meta http-equiv="x-ua-compatible" content="ie=edge">
+      
+        <meta name="description" content="All your devices, always updated">
+      
+      
+      
+      
+        <meta name="lang:clipboard.copy" content="Copy to clipboard">
+      
+        <meta name="lang:clipboard.copied" content="Copied to clipboard">
+      
+        <meta name="lang:search.language" content="en">
+      
+        <meta name="lang:search.pipeline.stopwords" content="True">
+      
+        <meta name="lang:search.pipeline.trimmer" content="True">
+      
+        <meta name="lang:search.result.none" content="No matching documents">
+      
+        <meta name="lang:search.result.one" content="1 matching document">
+      
+        <meta name="lang:search.result.other" content="# matching documents">
+      
+        <meta name="lang:search.tokenizer" content="[\s\-]+">
+      
+      <link rel="shortcut icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.6.0">
+    
+    
+      
+        <title>Quick starting with Raspberry Pi 3 - UpdateHub</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/application.1b62728e.css">
+      
+        <link rel="stylesheet" href="../assets/stylesheets/application-palette.a8b3c06d.css">
+      
+      
+        
+        
+        <meta name="theme-color" content="#3f51b5">
+      
+    
+    
+      <script src="../assets/javascripts/modernizr.268332fc.js"></script>
+    
+    
+      
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
+      
+    
+    <link rel="stylesheet" href="../assets/fonts/material-icons.css">
+    
+      <link rel="manifest" href="../manifest.webmanifest">
+    
+    
+    
+      
+        
+<script>
+  window.ga = window.ga || function() {
+    (ga.q = ga.q || []).push(arguments)
+  }
+  ga.l = +new Date
+  /* Setup integration and send page view */
+  ga("create", "UA-XXXXXXXX-X", "auto")
+  ga("set", "anonymizeIp", true)
+  ga("send", "pageview")
+  /* Register handler to log search on blur */
+  document.addEventListener("DOMContentLoaded", () => {
+    if (document.forms.search) {
+      var query = document.forms.search.query
+      query.addEventListener("blur", function() {
+        if (this.value) {
+          var path = document.location.pathname;
+          ga("send", "pageview", path + "?q=" + this.value)
+        }
+      })
+    }
+  })
+</script>
+<script async src="https://www.google-analytics.com/analytics.js"></script>
+      
+    
+    
+  </head>
+  
+    
+    
+    <body dir="ltr" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    <svg class="md-svg">
+      <defs>
+        
+        
+          <svg xmlns="http://www.w3.org/2000/svg" width="416" height="448" viewBox="0 0 416 448" id="__github"><path fill="currentColor" d="M160 304q0 10-3.125 20.5t-10.75 19T128 352t-18.125-8.5-10.75-19T96 304t3.125-20.5 10.75-19T128 256t18.125 8.5 10.75 19T160 304zm160 0q0 10-3.125 20.5t-10.75 19T288 352t-18.125-8.5-10.75-19T256 304t3.125-20.5 10.75-19T288 256t18.125 8.5 10.75 19T320 304zm40 0q0-30-17.25-51T296 232q-10.25 0-48.75 5.25Q229.5 240 208 240t-39.25-2.75Q130.75 232 120 232q-29.5 0-46.75 21T56 304q0 22 8 38.375t20.25 25.75 30.5 15 35 7.375 37.25 1.75h42q20.5 0 37.25-1.75t35-7.375 30.5-15 20.25-25.75T360 304zm56-44q0 51.75-15.25 82.75-9.5 19.25-26.375 33.25t-35.25 21.5-42.5 11.875-42.875 5.5T212 416q-19.5 0-35.5-.75t-36.875-3.125-38.125-7.5-34.25-12.875T37 371.5t-21.5-28.75Q0 312 0 260q0-59.25 34-99-6.75-20.5-6.75-42.5 0-29 12.75-54.5 27 0 47.5 9.875t47.25 30.875Q171.5 96 212 96q37 0 70 8 26.25-20.5 46.75-30.25T376 64q12.75 25.5 12.75 54.5 0 21.75-6.75 42 34 40 34 99.5z"/></svg>
+        
+      </defs>
+    </svg>
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
+    
+      <a href="#quick-starting-with-raspberrypi-3" tabindex="1" class="md-skip">
+        Skip to content
+      </a>
+    
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <a href=".." title="UpdateHub" class="md-header-nav__button md-logo">
+          
+            <img src="../img/assets/favicon.ico" width="24" height="24">
+          
+        </a>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="__drawer"></label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
+          
+            <span class="md-header-nav__topic">
+              UpdateHub
+            </span>
+            <span class="md-header-nav__topic">
+              
+                Quick starting with Raspberry Pi 3
+              
+            </span>
+          
+        </div>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        
+          <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
+          
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
+      <label class="md-icon md-search__icon" for="__search"></label>
+      <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
+        &#xE5CD;
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result">
+          <div class="md-search-result__meta">
+            Type to start searching
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+        
+      </div>
+      
+        <div class="md-flex__cell md-flex__cell--shrink">
+          <div class="md-header-nav__source">
+            
+
+
+  
+
+<a href="https://github.com/UpdateHub/updatehub.github.io/" title="Go to repository" class="md-source" data-md-source="github">
+  
+    <div class="md-source__icon">
+      <svg viewBox="0 0 24 24" width="24" height="24">
+        <use xlink:href="#__github" width="24" height="24"></use>
+      </svg>
+    </div>
+  
+  <div class="md-source__repository">
+    UpdateHub/updatehub.github.io
+  </div>
+</a>
+          </div>
+        </div>
+      
+    </div>
+  </nav>
+</header>
+    
+    <div class="md-container">
+      
+        
+      
+      
+        
+
+<nav class="md-tabs" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  <li class="md-tabs__item">
+    
+      <a href=".." class="md-tabs__link md-tabs__link--active">
+        Introduction
+      </a>
+    
+  </li>
+
+      
+        
+      
+        
+      
+        
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../updatehub-cloud/dashboard/" class="md-tabs__link">
+          Using UpdateHub Cloud
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../yocto-project/yocto-project-guide/" class="md-tabs__link">
+          Integrating with Yocto Project
+        </a>
+      
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+      
+      <main class="md-main" role="main">
+        <div class="md-main__inner md-grid" data-md-component="container">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" data-md-level="0">
+  <label class="md-nav__title md-nav__title--site" for="__drawer">
+    <a href=".." title="UpdateHub" class="md-nav__button md-logo">
+      
+        <img src="../img/assets/favicon.ico" width="48" height="48">
+      
+    </a>
+    UpdateHub
+  </label>
+  
+    <div class="md-nav__source">
+      
+
+
+  
+
+<a href="https://github.com/UpdateHub/updatehub.github.io/" title="Go to repository" class="md-source" data-md-source="github">
+  
+    <div class="md-source__icon">
+      <svg viewBox="0 0 24 24" width="24" height="24">
+        <use xlink:href="#__github" width="24" height="24"></use>
+      </svg>
+    </div>
+  
+  <div class="md-source__repository">
+    UpdateHub/updatehub.github.io
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href=".." title="Introduction" class="md-nav__link">
+      Introduction
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../what-is-updatehub/" title="What is UpdateHub" class="md-nav__link">
+      What is UpdateHub
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Quick starting with Raspberry Pi 3
+      </label>
+    
+    <a href="./" title="Quick starting with Raspberry Pi 3" class="md-nav__link md-nav__link--active">
+      Quick starting with Raspberry Pi 3
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#what-you-will-need" class="md-nav__link">
+    What You Will Need
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-guide" class="md-nav__link">
+    Step guide
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#first-step-preparing-the-yocto-project-environment" class="md-nav__link">
+    First step: preparing the Yocto Project environment
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#second-step-creating-a-product" class="md-nav__link">
+    Second step: creating a product
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#third-step-generating-an-access-key" class="md-nav__link">
+    Third step: generating an Access Key
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#fourth-step-configuring-the-localconf-file" class="md-nav__link">
+    Fourth step: Configuring the local.conf file
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#fifth-step-building-an-image" class="md-nav__link">
+    Fifth step: building an image
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sixth-step-changing-the-image" class="md-nav__link">
+    Sixth step: changing the image
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#seventh-step-sending-a-new-image-version" class="md-nav__link">
+    Seventh step: sending a new image version
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#eighth-step-creating-a-rollout" class="md-nav__link">
+    Eighth step: creating a rollout
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../faq/faq-questions/" title="FAQ" class="md-nav__link">
+      FAQ
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5">
+    
+    <label class="md-nav__link" for="nav-5">
+      Using UpdateHub Cloud
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-5">
+        Using UpdateHub Cloud
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../updatehub-cloud/dashboard/" title="UpdateHub Cloud dashboard" class="md-nav__link">
+      UpdateHub Cloud dashboard
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../updatehub-cloud/product/" title="Managing a Product" class="md-nav__link">
+      Managing a Product
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../updatehub-cloud/device/" title="Handling a Device" class="md-nav__link">
+      Handling a Device
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../updatehub-cloud/package-rollout/" title="Package and Rollout" class="md-nav__link">
+      Package and Rollout
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../updatehub-cloud/menu/" title="Your menu account" class="md-nav__link">
+      Your menu account
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-6" type="checkbox" id="nav-6">
+    
+    <label class="md-nav__link" for="nav-6">
+      Integrating with Yocto Project
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-6">
+        Integrating with Yocto Project
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../yocto-project/yocto-project-guide/" title="Yocto Project guide" class="md-nav__link">
+      Yocto Project guide
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../yocto-project/yocto-project-reference/" title="Yocto Project reference" class="md-nav__link">
+      Yocto Project reference
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../yocto-project/glossary/" title="Glossary of variables" class="md-nav__link">
+      Glossary of variables
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#what-you-will-need" class="md-nav__link">
+    What You Will Need
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-guide" class="md-nav__link">
+    Step guide
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#first-step-preparing-the-yocto-project-environment" class="md-nav__link">
+    First step: preparing the Yocto Project environment
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#second-step-creating-a-product" class="md-nav__link">
+    Second step: creating a product
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#third-step-generating-an-access-key" class="md-nav__link">
+    Third step: generating an Access Key
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#fourth-step-configuring-the-localconf-file" class="md-nav__link">
+    Fourth step: Configuring the local.conf file
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#fifth-step-building-an-image" class="md-nav__link">
+    Fifth step: building an image
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sixth-step-changing-the-image" class="md-nav__link">
+    Sixth step: changing the image
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#seventh-step-sending-a-new-image-version" class="md-nav__link">
+    Seventh step: sending a new image version
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#eighth-step-creating-a-rollout" class="md-nav__link">
+    Eighth step: creating a rollout
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                  <a href="https://github.com/UpdateHub/updatehub.github.io/edit/master/docs/quick-starting-with-raspberrypi3.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
+                
+                
+                <h1 id="quick-starting-with-raspberrypi-3">Quick starting with RaspberryPi 3<a class="headerlink" href="#quick-starting-with-raspberrypi-3" title="Permanent link">&para;</a></h1>
+<p>In this step-by-step we show how easily you can generate a <strong>Linux</strong> image,
+that has <strong>UpdateHub</strong> support, using <strong>Yocto Project</strong> in a <strong>Raspberry Pi 3</strong>
+development board. So you can get to know <strong>UpdateHub</strong> in a practical way and
+see how simple it is to keep your devices updated in the field using a secure
+way of communication.</p>
+<div class="admonition warning">
+<p>We assume that you have previous experience with the Yocto
+Project, know the main terms and have already created an image using it. If
+you are new to this
+<a href="https://www.yoctoproject.org/docs/3.0.1/brief-yoctoprojectqs/brief-yoctoprojectqs.html">tutorial</a>,
+you can use it.</p>
+</div>
+<h2 id="what-you-will-need">What You Will Need<a class="headerlink" href="#what-you-will-need" title="Permanent link">&para;</a></h2>
+<p>To follow this guide, you will need the following:</p>
+<ul>
+<li>A <strong>Raspberry Pi 3</strong> <a href="https://www.raspberrypi.org/products/raspberry-pi-3-model-b/">Model
+B</a> or
+<a href="http://www.raspberrypi.org/products/raspberry-pi-3-model-b-plus/">B+</a></li>
+<li>An 4 GB or larger micro SD card</li>
+<li>An Ethernet cable for wired connectivity to the internet</li>
+<li>An <a href="https://auth.updatehub.io/auth/signup/">UpdateHub account</a> to access the
+hosted server</li>
+</ul>
+<div class="admonition info">
+<p>An <strong>UpdateHub</strong> account allows manager even 5 devices; for more
+support and features is advisable <a href="https://updatehub.io/pricing/#pricing">migrate your
+plan</a>.</p>
+</div>
+<h2 id="step-guide">Step guide<a class="headerlink" href="#step-guide" title="Permanent link">&para;</a></h2>
+<p>In order to generate an image that connects a device to the <strong>UpdateHub
+Cloud</strong>, we will first have to <a href="#first-step-preparing-the-yocto-project-environment">prepare the <strong>Yocto Project</strong>
+environment</a> with the
+basic layers to generate an image with support for UpdateHub.</p>
+<p>In addition to the layers, you will need to configure some variables that are
+generated on the Dashboard. The first is the <a href="#second-step-creating-a-product">product
+identifier</a> to which the device and the image
+will be connected. Then we will have to <a href="#third-step-generating-an-access-key">generate an access
+key</a> in <em>Settings</em> that will authenticate
+the device when it accesses the server.</p>
+<p>At this point, we <a href="#fourth-step-configuring-the-localconf-file">check the
+<em>local.conf</em></a> file to verify that
+everything is correct and <a href="#fifth-step-building-an-image">build the
+image</a>. That's it! Now just flash the image on
+the device and it is prepared with OTA support.</p>
+<p>Additionally we <a href="#sixth-step-changing-the-image">update the image</a> by adding
+ssh support and we <a href="#seventh-step-sending-a-new-image-version">send the updated
+image</a> to UpdateHub Cloud and show
+how simple an update of your device is with the <a href="#eighth-step-creating-a-rollout">create a
+rollout</a>.</p>
+<h2 id="first-step-preparing-the-yocto-project-environment">First step: preparing the Yocto Project environment<a class="headerlink" href="#first-step-preparing-the-yocto-project-environment" title="Permanent link">&para;</a></h2>
+<p>The first step is to initialize the environment to build a <strong>Linux</strong> image
+using <strong>Yocto Project</strong> and for that we need to fetch all the needed layers,
+that includes the main <em>OE-Core</em> layers, the <em>BSP</em> layer that adds support to
+<strong>Raspberry Pi</strong> and the layers that add support to <strong>UpdateHub</strong>.</p>
+<p>To get the platform you need to have
+<a href="https://gerrit.googlesource.com/git-repo/"><em>Repo</em></a> (a tool for manager git
+repositories) installed:</p>
+<p>For <em>Debian/Ubuntu</em> based distros run:</p>
+<div class="codehilite"><pre><span></span>sudo apt-get install repo
+</pre></div>
+
+
+<p>For others distros, check the distro documentation or install <code>repo</code> manually:</p>
+<div class="codehilite"><pre><span></span>mkdir -p ~/.bin
+PATH=&quot;${HOME}/.bin:${PATH}&quot;
+curl https://storage.googleapis.com/git-repo-downloads/repo &gt; ~/.bin/repo
+chmod a+rx ~/.bin/repo
+</pre></div>
+
+
+<p>To download the platform source, that will download all layers:</p>
+<div class="codehilite"><pre><span></span>mkdir updatehub-get-started
+cd updatehub-get-started
+repo init -u https://github.com/fbertux/updatehub-yocto-project-get-started.git
+repo sync
+</pre></div>
+
+
+<p>Setup the environment with:</p>
+<div class="codehilite"><pre><span></span>source ./setup-environment build
+</pre></div>
+
+
+<p>At the end of the commands you have all metadata you need to start to work.</p>
+<h2 id="second-step-creating-a-product">Second step: creating a product<a class="headerlink" href="#second-step-creating-a-product" title="Permanent link">&para;</a></h2>
+<p>One of the variables needed to generate the image is the product identifier
+that is generated when creating a <em>Product</em>.</p>
+<p>To create a <em>Product</em> just go to <a href="https://dashboard.updatehub.io/"><em>Dashboard</em></a>
+and click on <em>Add product</em>.</p>
+<p align="center"> <img
+  src="../img/introduction/quick-starting-with-raspberrypi3/addProduct.png">
+  </p>
+
+<p>By doing that the following dialog will be displayed. You should choose a
+<em>Product</em> name and in <em>Owner</em> choose <em>Me</em>.</p>
+<div class="admonition danger">
+<p class="admonition-title">About the name and owner</p>
+<p>Bear in the mind that after you create a
+<em>Product</em> you can not renamed or deleted it, and you can not transfer it to
+a organization or vice versa, so have sure you are choosing the correct
+name and the owner.</p>
+</div>
+<p align="center"> <img
+  src="../img/introduction/quick-starting-with-raspberrypi3/modalProduct.png">
+  </p>
+
+<p>After the <em>Product</em> has been created a <em>Unique Identifier Number</em>
+(<em>UPDATEHUB_PRODUCT_UID</em>) is generated to identify it. This number, should be
+added to your build in order to allow the <strong>UpdateHub</strong> agent, which runs
+inside the target device, to communicate with the <strong>UpdateHub Cloud</strong>.</p>
+<p align="center"> <img
+  src="../img/introduction/quick-starting-with-raspberrypi3/uid.png"> </p>
+
+<p>For convenience, you can add the <em>UPDATEHUB_PRODUCT_UID</em> to your
+<code>build/conf/local.conf</code> configuration file when prototyping. However, as this
+is a information that will be permanent for the whole product life cycle, it
+should be put inside your distribution configuration file, or image recipe.</p>
+<div class="admonition info">
+<p>In case you didn't copy the <em>Product Unique Identifier Number</em> in
+the moment that you create it on the <strong>UpdateHub Cloud</strong> don't worry. To
+get access to this information again you must click on the <em>Product</em> icon
+and the <em>Unique Identifier Number</em> will be shown to you.</p>
+</div>
+<p>Once you have logged in, the <em>Products</em> page will display the list of your own
+products and the other products you have access to.</p>
+<p align="center"> <img
+  src="../img/introduction/quick-starting-with-raspberrypi3/productList.png">
+  </p>
+
+<h2 id="third-step-generating-an-access-key">Third step: generating an Access Key<a class="headerlink" href="#third-step-generating-an-access-key" title="Permanent link">&para;</a></h2>
+<p>To authenticate and authorize requests for a project build with the <strong>UpdateHub
+Cloud</strong> you must have a security credential in the form of an application
+access key. Each access key is specific to your user and is used to upload the
+packages update or any other external integration which needs to access the
+<strong>UpdateHub</strong> API.</p>
+<p>In order to generate an <em>Access Key</em> you must enter the <em>Settings</em> menu and
+click on the <em>+ Request Access Key</em> button. Choose a name for the key and
+select the API Key owner as <em>Me</em>.</p>
+<p align="center"> <img
+  src="../../img/introduction/quick-starting-with-raspberrypi3/menu-setting.png">
+  </p>
+
+<p>Once the <em>Access Key</em> is created a dialog will appear to show the security
+credentials.</p>
+<div class="admonition danger">
+<p class="admonition-title">Save your keys</p>
+<p>On the moment that this window is closed the keys
+will not be shown again and if you lose them you must revoke the <em>Access
+Key</em> and generate a new one.</p>
+</div>
+<p align="center"> <img
+  src="../img/introduction/quick-starting-with-raspberrypi3/accesskey.png">
+  </p>
+
+<p>Include these variables in <code>build/conf/local.conf</code>:</p>
+<div class="codehilite"><pre><span></span>UPDATEHUB_ACCESS_ID = &quot;your-email@gmail.com-8bc21121049af...&quot;
+UPDATEHUB_ACCESS_SECRET = &quot;9b1fcee96795fa5dea5cd04cb1d2...&quot;
+</pre></div>
+
+
+<h2 id="fourth-step-configuring-the-localconf-file">Fourth step: Configuring the local.conf file<a class="headerlink" href="#fourth-step-configuring-the-localconf-file" title="Permanent link">&para;</a></h2>
+<p>Come back in <strong>Yocto Project</strong> directory in your computer. After fetching the
+bitbake layers is important to change some variables in the <code>local.conf</code> file.</p>
+<p>Here we'll put the variables that were generated before: UPDATEHUB_PRODUCT_UID
+from the <em>Product</em> and the UPDATEHUB_ACCESS_ID and UPDATEHUB_ACCESS_SECRET
+generated in <em>Settings</em>.</p>
+<div class="codehilite"><pre><span></span>UPDATEHUB_PRODUCT_UID = &quot;05344b71c3e9f8...&quot;
+UPDATEHUB_ACCESS_ID = &quot;your-email@gmail.com-8bc21121049af...&quot;
+UPDATEHUB_ACCESS_SECRET = &quot;9b1fcee96795fa5dea5cd04cb1d2...&quot;
+</pre></div>
+
+
+<p><em>UPDATEHUB_PACKAGE_VERSION_SUFFIX</em> is used to add a suffix in the version of
+the image being generated. This is useful for placing a version number and
+incrementing with each new image.</p>
+<div class="codehilite"><pre><span></span>UPDATEHUB_PACKAGE_VERSION_SUFFIX =&quot;-test-image-1.0&quot;
+</pre></div>
+
+
+<p>Finally the final of your <code>local.conf</code> file should seem like this.</p>
+<div class="codehilite"><pre><span></span>UPDATEHUB_PRODUCT_UID = &quot;05344b71c3e9f8...&quot;
+UPDATEHUB_ACCESS_ID = &quot;your-email@gmail.com-8bc21121049af...&quot;
+UPDATEHUB_ACCESS_SECRET = &quot;9b1fcee96795fa5dea5cd04cb1d2...&quot;
+UPDATEHUB_PACKAGE_VERSION_SUFFIX = &quot;-test-image-1.0&quot;
+</pre></div>
+
+
+<h2 id="fifth-step-building-an-image">Fifth step: building an image<a class="headerlink" href="#fifth-step-building-an-image" title="Permanent link">&para;</a></h2>
+<p>With all variables configured, now we can generate our image: Open a terminal,
+go to your build directory and type:</p>
+<div class="codehilite"><pre><span></span>bitbake updatehub-image-base
+</pre></div>
+
+
+<div class="admonition info">
+<p>The generate image process can take a good time, it is dependent
+directly of the host resources.</p>
+</div>
+<p>Now it's time to flash the image in the SD card. Then in a terminal go to this
+directory:</p>
+<div class="codehilite"><pre><span></span>build/tmp/deploy/images/raspberrypi3/
+</pre></div>
+
+
+<p>and type this:</p>
+<div class="admonition danger">
+<p>Check the name of the SD card before executing the command below!</p>
+</div>
+<div class="admonition tip">
+<p>You can check the device name that correspond to SD card using command <code>dmesg</code></p>
+</div>
+<div class="codehilite"><pre><span></span>zcat updatehub-image-base-raspberrypi3.wic.gz | sudo dd of=/dev/sdX
+</pre></div>
+
+
+<p>With the SD card ready, you can insert it into the target and connect it to
+<strong>RaspberryPi</strong>. The image is configured to obtain an IP address using DHCP. To
+access the console, the <em>user</em> is set to root” and doesn't need to enter a
+password, just hit <em>Enter</em>.</p>
+<p>You can confirm the version of the image that is running on the target with the
+command:</p>
+<div class="codehilite"><pre><span></span>cat /etc/os-release
+</pre></div>
+
+
+<p>You will see the version that you put in the <code>local.conf</code> file.</p>
+<div class="codehilite"><pre><span></span>O.S. Systems Embedded Linux 19.10 raspberrypi3 ttyS0
+root@raspberrypi3:~# cat /etc/os-release
+ID=&quot;oel&quot;
+NAME=&quot;O.S. Systems Embedded Linux&quot;
+VERSION=&quot;19.10&quot;
+VERSION_ID=&quot;19.10-test-image-1.0&quot;
+PRETTY_NAME=&quot;O.S. Systems Embedded Linux 19.10&quot;
+UPDATEHUB_PRODUCT_UID=&quot;05344b71c3e9f8...&quot;&quot;
+root@raspberrypi3:~#
+</pre></div>
+
+
+<h2 id="sixth-step-changing-the-image">Sixth step: changing the image<a class="headerlink" href="#sixth-step-changing-the-image" title="Permanent link">&para;</a></h2>
+<p>Now that the whole upgrade process has been explained, we'll add support for an
+SSH server on the target and create an update package to install this
+functionality.</p>
+<p>To add support for the SSH OpenSSH server add the following line to the
+<code>conf/local.conf</code> file:</p>
+<div class="codehilite"><pre><span></span>IMAGE_FEATURES += &quot;ssh-server-openssh&quot;
+</pre></div>
+
+
+<p>And change the variable <em>UPDATEHUB_PACKAGE_VERSION_SUFFIX</em> to use version of our
+test image:</p>
+<div class="codehilite"><pre><span></span>UPDATEHUB_PACKAGE_VERSION_SUFFIX = &quot;-test-image-2.0&quot;
+</pre></div>
+
+
+<h2 id="seventh-step-sending-a-new-image-version">Seventh step: sending a new image version<a class="headerlink" href="#seventh-step-sending-a-new-image-version" title="Permanent link">&para;</a></h2>
+<p>We can save the file, generate a new update package, and send the new file to
+<strong>UpdateHub Cloud</strong> by running the same command:</p>
+<div class="codehilite"><pre><span></span>bitbake updatehub-image-base -c uhupush
+</pre></div>
+
+
+<p>After sending, the package will be available on the <em>Dashboard</em> in the
+<em>Package</em> section of the corresponding <em>Product</em> page.</p>
+<h2 id="eighth-step-creating-a-rollout">Eighth step: creating a rollout<a class="headerlink" href="#eighth-step-creating-a-rollout" title="Permanent link">&para;</a></h2>
+<p>Rollout is the process of sending an updated image to devices in the field
+through <strong>UpdateHub Cloud</strong>. To create a rollout we have to access the
+<a href="https://dashboard.updatehub.io/"><em>dashboard</em></a>, access the <em>Product</em> card we
+created before, and then click on <em>Create rollout</em>. In the displayed window
+choose the available version and click on <em>Save and start</em>.</p>
+<p>The status of the update process is shown in the displayed window, and can also
+be followed by the <em>Devices</em> section for each device individually.</p>
+<p>When the status shows updated, we can access the target using the SSH protocol,
+for this type in the host:</p>
+<div class="codehilite"><pre><span></span>ssh root@TARGET_IP_ADDR
+</pre></div>
+
+
+<p>No password is required, just hit <em>Enter</em> and we will be in the target
+console. Again we can check the version with the contents of the
+<code>/etc/os-release</code> file.</p>
+<p><strong>Here we finish our quick start, but we invite you to learn more about
+UpdateHub in the rest of the documentation.</strong></p>
+<p>If you have encountered difficulties or have any questions or suggestions,
+please contact us through the Gitter or send us an email by
+contact@updatehub.io.</p>
+                
+                  
+                
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+        
+          <a href="../what-is-updatehub/" title="What is UpdateHub" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+            </div>
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                What is UpdateHub
+              </span>
+            </div>
+          </a>
+        
+        
+          <a href="../faq/faq-questions/" title="FAQ" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                FAQ
+              </span>
+            </div>
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+          <div class="md-footer-copyright__highlight">
+            Copyright &copy; 2020 O.S. Systems
+          </div>
+        
+        powered by
+        <a href="https://www.mkdocs.org">MkDocs</a>
+        and
+        <a href="https://squidfunk.github.io/mkdocs-material/">
+          Material for MkDocs</a>
+      </div>
+      
+  <div class="md-footer-social">
+    <link rel="stylesheet" href="../assets/fonts/font-awesome.css">
+    
+      <a href="https://github.com/OSSystems" class="md-footer-social__link fa fa-github"></a>
+    
+      <a href="https://twitter.com/OSSystemsNews?s=20" class="md-footer-social__link fa fa-twitter"></a>
+    
+      <a href="https://www.linkedin.com/company/ossystems" class="md-footer-social__link fa fa-linkedin"></a>
+    
+  </div>
+
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../assets/javascripts/application.808e90bb.js"></script>
+      
+      <script>app.initialize({version:"1.0.4",url:{base:".."}})</script>
+      
+    
+  </body>
+</html>

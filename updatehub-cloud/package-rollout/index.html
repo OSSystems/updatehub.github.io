@@ -1,0 +1,915 @@
+
+
+
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      <meta http-equiv="x-ua-compatible" content="ie=edge">
+      
+        <meta name="description" content="All your devices, always updated">
+      
+      
+      
+      
+        <meta name="lang:clipboard.copy" content="Copy to clipboard">
+      
+        <meta name="lang:clipboard.copied" content="Copied to clipboard">
+      
+        <meta name="lang:search.language" content="en">
+      
+        <meta name="lang:search.pipeline.stopwords" content="True">
+      
+        <meta name="lang:search.pipeline.trimmer" content="True">
+      
+        <meta name="lang:search.result.none" content="No matching documents">
+      
+        <meta name="lang:search.result.one" content="1 matching document">
+      
+        <meta name="lang:search.result.other" content="# matching documents">
+      
+        <meta name="lang:search.tokenizer" content="[\s\-]+">
+      
+      <link rel="shortcut icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.6.0">
+    
+    
+      
+        <title>Package and Rollout - UpdateHub</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/application.1b62728e.css">
+      
+        <link rel="stylesheet" href="../../assets/stylesheets/application-palette.a8b3c06d.css">
+      
+      
+        
+        
+        <meta name="theme-color" content="#3f51b5">
+      
+    
+    
+      <script src="../../assets/javascripts/modernizr.268332fc.js"></script>
+    
+    
+      
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
+      
+    
+    <link rel="stylesheet" href="../../assets/fonts/material-icons.css">
+    
+      <link rel="manifest" href="../../manifest.webmanifest">
+    
+    
+    
+      
+        
+<script>
+  window.ga = window.ga || function() {
+    (ga.q = ga.q || []).push(arguments)
+  }
+  ga.l = +new Date
+  /* Setup integration and send page view */
+  ga("create", "UA-XXXXXXXX-X", "auto")
+  ga("set", "anonymizeIp", true)
+  ga("send", "pageview")
+  /* Register handler to log search on blur */
+  document.addEventListener("DOMContentLoaded", () => {
+    if (document.forms.search) {
+      var query = document.forms.search.query
+      query.addEventListener("blur", function() {
+        if (this.value) {
+          var path = document.location.pathname;
+          ga("send", "pageview", path + "?q=" + this.value)
+        }
+      })
+    }
+  })
+</script>
+<script async src="https://www.google-analytics.com/analytics.js"></script>
+      
+    
+    
+  </head>
+  
+    
+    
+    <body dir="ltr" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    <svg class="md-svg">
+      <defs>
+        
+        
+          <svg xmlns="http://www.w3.org/2000/svg" width="416" height="448" viewBox="0 0 416 448" id="__github"><path fill="currentColor" d="M160 304q0 10-3.125 20.5t-10.75 19T128 352t-18.125-8.5-10.75-19T96 304t3.125-20.5 10.75-19T128 256t18.125 8.5 10.75 19T160 304zm160 0q0 10-3.125 20.5t-10.75 19T288 352t-18.125-8.5-10.75-19T256 304t3.125-20.5 10.75-19T288 256t18.125 8.5 10.75 19T320 304zm40 0q0-30-17.25-51T296 232q-10.25 0-48.75 5.25Q229.5 240 208 240t-39.25-2.75Q130.75 232 120 232q-29.5 0-46.75 21T56 304q0 22 8 38.375t20.25 25.75 30.5 15 35 7.375 37.25 1.75h42q20.5 0 37.25-1.75t35-7.375 30.5-15 20.25-25.75T360 304zm56-44q0 51.75-15.25 82.75-9.5 19.25-26.375 33.25t-35.25 21.5-42.5 11.875-42.875 5.5T212 416q-19.5 0-35.5-.75t-36.875-3.125-38.125-7.5-34.25-12.875T37 371.5t-21.5-28.75Q0 312 0 260q0-59.25 34-99-6.75-20.5-6.75-42.5 0-29 12.75-54.5 27 0 47.5 9.875t47.25 30.875Q171.5 96 212 96q37 0 70 8 26.25-20.5 46.75-30.25T376 64q12.75 25.5 12.75 54.5 0 21.75-6.75 42 34 40 34 99.5z"/></svg>
+        
+      </defs>
+    </svg>
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
+    
+      <a href="#manipulating-a-package" tabindex="1" class="md-skip">
+        Skip to content
+      </a>
+    
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <a href="../.." title="UpdateHub" class="md-header-nav__button md-logo">
+          
+            <img src="../../img/assets/favicon.ico" width="24" height="24">
+          
+        </a>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="__drawer"></label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
+          
+            <span class="md-header-nav__topic">
+              UpdateHub
+            </span>
+            <span class="md-header-nav__topic">
+              
+                Package and Rollout
+              
+            </span>
+          
+        </div>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        
+          <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
+          
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
+      <label class="md-icon md-search__icon" for="__search"></label>
+      <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
+        &#xE5CD;
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result">
+          <div class="md-search-result__meta">
+            Type to start searching
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+        
+      </div>
+      
+        <div class="md-flex__cell md-flex__cell--shrink">
+          <div class="md-header-nav__source">
+            
+
+
+  
+
+<a href="https://github.com/UpdateHub/updatehub.github.io/" title="Go to repository" class="md-source" data-md-source="github">
+  
+    <div class="md-source__icon">
+      <svg viewBox="0 0 24 24" width="24" height="24">
+        <use xlink:href="#__github" width="24" height="24"></use>
+      </svg>
+    </div>
+  
+  <div class="md-source__repository">
+    UpdateHub/updatehub.github.io
+  </div>
+</a>
+          </div>
+        </div>
+      
+    </div>
+  </nav>
+</header>
+    
+    <div class="md-container">
+      
+        
+      
+      
+        
+
+  
+
+<nav class="md-tabs md-tabs--active" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  <li class="md-tabs__item">
+    
+      <a href="../.." class="md-tabs__link">
+        Introduction
+      </a>
+    
+  </li>
+
+      
+        
+      
+        
+      
+        
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../dashboard/" class="md-tabs__link md-tabs__link--active">
+          Using UpdateHub Cloud
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../yocto-project/yocto-project-guide/" class="md-tabs__link">
+          Integrating with Yocto Project
+        </a>
+      
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+      
+      <main class="md-main" role="main">
+        <div class="md-main__inner md-grid" data-md-component="container">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" data-md-level="0">
+  <label class="md-nav__title md-nav__title--site" for="__drawer">
+    <a href="../.." title="UpdateHub" class="md-nav__button md-logo">
+      
+        <img src="../../img/assets/favicon.ico" width="48" height="48">
+      
+    </a>
+    UpdateHub
+  </label>
+  
+    <div class="md-nav__source">
+      
+
+
+  
+
+<a href="https://github.com/UpdateHub/updatehub.github.io/" title="Go to repository" class="md-source" data-md-source="github">
+  
+    <div class="md-source__icon">
+      <svg viewBox="0 0 24 24" width="24" height="24">
+        <use xlink:href="#__github" width="24" height="24"></use>
+      </svg>
+    </div>
+  
+  <div class="md-source__repository">
+    UpdateHub/updatehub.github.io
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../.." title="Introduction" class="md-nav__link">
+      Introduction
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../what-is-updatehub/" title="What is UpdateHub" class="md-nav__link">
+      What is UpdateHub
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../quick-starting-with-raspberrypi3/" title="Quick starting with Raspberry Pi 3" class="md-nav__link">
+      Quick starting with Raspberry Pi 3
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../faq/faq-questions/" title="FAQ" class="md-nav__link">
+      FAQ
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5" checked>
+    
+    <label class="md-nav__link" for="nav-5">
+      Using UpdateHub Cloud
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-5">
+        Using UpdateHub Cloud
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../dashboard/" title="UpdateHub Cloud dashboard" class="md-nav__link">
+      UpdateHub Cloud dashboard
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../product/" title="Managing a Product" class="md-nav__link">
+      Managing a Product
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../device/" title="Handling a Device" class="md-nav__link">
+      Handling a Device
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Package and Rollout
+      </label>
+    
+    <a href="./" title="Package and Rollout" class="md-nav__link md-nav__link--active">
+      Package and Rollout
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#manipulating-a-package" class="md-nav__link">
+    Manipulating a Package
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#viewing-the-package-list" class="md-nav__link">
+    Viewing the package list
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#more-informations-about-a-package" class="md-nav__link">
+    More informations about a package
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#administering-a-rollout" class="md-nav__link">
+    Administering a Rollout
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ways-to-create-a-rollout" class="md-nav__link">
+    Ways to create a rollout
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#all-devices" class="md-nav__link">
+    All devices
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#select-the-target-devices" class="md-nav__link">
+    Select the target devices
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#register-of-rollouts" class="md-nav__link">
+    Register of rollouts
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#detailing-a-rollout" class="md-nav__link">
+    Detailing a rollout
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../menu/" title="Your menu account" class="md-nav__link">
+      Your menu account
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-6" type="checkbox" id="nav-6">
+    
+    <label class="md-nav__link" for="nav-6">
+      Integrating with Yocto Project
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-6">
+        Integrating with Yocto Project
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../yocto-project/yocto-project-guide/" title="Yocto Project guide" class="md-nav__link">
+      Yocto Project guide
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../yocto-project/yocto-project-reference/" title="Yocto Project reference" class="md-nav__link">
+      Yocto Project reference
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../yocto-project/glossary/" title="Glossary of variables" class="md-nav__link">
+      Glossary of variables
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary">
+  
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#manipulating-a-package" class="md-nav__link">
+    Manipulating a Package
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#viewing-the-package-list" class="md-nav__link">
+    Viewing the package list
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#more-informations-about-a-package" class="md-nav__link">
+    More informations about a package
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#administering-a-rollout" class="md-nav__link">
+    Administering a Rollout
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ways-to-create-a-rollout" class="md-nav__link">
+    Ways to create a rollout
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#all-devices" class="md-nav__link">
+    All devices
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#select-the-target-devices" class="md-nav__link">
+    Select the target devices
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#register-of-rollouts" class="md-nav__link">
+    Register of rollouts
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#detailing-a-rollout" class="md-nav__link">
+    Detailing a rollout
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                  <a href="https://github.com/UpdateHub/updatehub.github.io/edit/master/docs/updatehub-cloud/package-rollout.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
+                
+                
+                  <h1>Package and Rollout</h1>
+                
+                <p>As <em>Package</em> and <em>Rollout</em> are strictly linked, we chose to address both in a single section.
+In summary, we can say that a <em>Rollout</em> is the process of applying a <em>Package</em> to certain devices
+ but in subsections below more detailed description is given.</p>
+<h2 id="manipulating-a-package">Manipulating a Package<a class="headerlink" href="#manipulating-a-package" title="Permanent link">&para;</a></h2>
+<p>A <em>Package</em> is a update which will add or remove information to an image that is running on a device that is in the field.
+First, a modified image will be sent to the server with a specific command (see more in uhupkg) and then it is available in the <em>Package</em> subsection, becoming available to be selected in a new rollout.</p>
+<p>In dashboard, the <em>Package</em> is available after you join in a specific <em>Product</em>.</p>
+<p>In this session we will cover:</p>
+<ul>
+<li><a href="#viewing-the-package-list">Viewing the package list</a></li>
+<li><a href="#more-informations-about-a-package">More informations about a package</a></li>
+</ul>
+<h3 id="viewing-the-package-list">Viewing the package list<a class="headerlink" href="#viewing-the-package-list" title="Permanent link">&para;</a></h3>
+<p>The <em>Packages</em> page, in the same fashion as the <em>Devices</em> page, exhibit a list with information about the packages inside a specific <em>Product</em> the user selected, such as:</p>
+<ul>
+<li><em>Package Unique Identifier</em> (UID)</li>
+<li>Version</li>
+<li>Supported hardware list</li>
+<li>Status</li>
+<li>Size</li>
+<li>Upload date</li>
+</ul>
+<p>Each one of these items help the user find a specific package. To filter more efficiently the packages you can select and associate them by the following items during the search:</p>
+<ul>
+<li>Status of each package can be found depending on the situation for the <em>Rollout</em><ul>
+<li><em>Available</em>: the package is ready to be downloaded</li>
+<li><em>Upload in Progress</em>: package during the uploaded process</li>
+<li><em>Removed</em>: packages that were removed from the packages list</li>
+<li><em>Pending Progress</em>: packages being checked by the server</li>
+<li><em>Packages with Error</em>: packages that failed the system checksum</li>
+</ul>
+</li>
+<li>Version for the package</li>
+<li>Supported hardware</li>
+</ul>
+<p align="center">
+  <img src="../../img/updatehub-cloud/package-rollout/packageList.png">
+</p>
+
+<h3 id="more-informations-about-a-package">More informations about a package<a class="headerlink" href="#more-informations-about-a-package" title="Permanent link">&para;</a></h3>
+<p>In the <em>Package Details</em> page the user may have a deeper look into a particular <em>Package</em> and its information.</p>
+<p>Beyond the information already present on the <em>Package List</em>, you will find more data about the <em>Objects</em> and their details which is used by the <strong>UpdateHub</strong> agent during the object's installation.</p>
+<p align="center">
+  <img src="../../img/updatehub-cloud/package-rollout/package.png">
+</p>
+
+<p>Once you entered in the <em>Package Details</em> you have the option to remove the package from the <em>Rollout</em> if necessary by clicking on the <em>trash can</em> icon. The package will be visible and accessible but won't be available anymore.</p>
+<h2 id="administering-a-rollout">Administering a Rollout<a class="headerlink" href="#administering-a-rollout" title="Permanent link">&para;</a></h2>
+<p><em>Rollout</em> is the process of sending updates from the server to the devices registered in a certain product. To start a rollout, the update package must be sent to the server and then the process can be initiated by product * overview * or by the subsection rollout.</p>
+<p>In this session we will cover:</p>
+<ul>
+<li><a href="#ways-to-create-a-rollout">Ways to create a rollout</a><ul>
+<li><a href="#all-devices">All devices</a></li>
+<li><a href="#select-the-target-devices">Select the target devices</a></li>
+</ul>
+</li>
+<li><a href="#register-of-rollouts">Register of rollouts</a></li>
+<li><a href="#detailing-a-rollout">Detailing a rollout</a></li>
+</ul>
+<h3 id="ways-to-create-a-rollout">Ways to create a rollout<a class="headerlink" href="#ways-to-create-a-rollout" title="Permanent link">&para;</a></h3>
+<p>There are two methods to execute the <em>Rollout</em>: the simpler way is update all the versions of the <em>Devices</em> present on the field at once; the other way is to selecting which <em>Devices</em> receives the update through <em>Advanced Mode</em> option. </p>
+<h4 id="all-devices">All devices<a class="headerlink" href="#all-devices" title="Permanent link">&para;</a></h4>
+<p>To update all devices in the field to the same version you just need to go to the <em>Overview</em> or <em>Rollouts</em> page and click on <em>Create Rollout</em>. A box to choose the <em>version</em> will appear. After you make this choice just click on <em>Save</em> to initiate the <em>Rollout</em> later or <em>Save and Start</em> launch it straightaway.</p>
+<p align="center">
+  <img src="../../img/updatehub-cloud/package-rollout/createRollout.png">
+</p>
+
+<h4 id="select-the-target-devices">Select the target devices<a class="headerlink" href="#select-the-target-devices" title="Permanent link">&para;</a></h4>
+<p>The other way is to select which equipment receives the * Rollout * is using the <em>Advanced Mode</em> option that allows the use of selection filters for devices.</p>
+<p>In advanced mode, you can create and name tasks that define the filters that will be applied, selecting which devices will receive the update. In addition to the available filters, UpdateHub provides <em>Fault Tolerance</em>, which is a percentage that can be set by the user to abort the <em>Rollout</em> automatically if the failure rate exceeds the specified limit.</p>
+<div class="admonition warning">
+<p class="admonition-title">It is advised to use <em>Fault Tolerance</em> percentage because this is safe measure.</p>
+</div>
+<p align="center">
+  <img src="../../img/updatehub-cloud/package-rollout/createRolloutAdvanced.png">
+</p>
+
+<p>The Devices can be filter by their Version, Hardware, Device Identifier (e.g: the MAC address) and Device Attributes (e.g: kernel version, device total memory). Finally Save the Rollout to start later or Save and Start it immediately.</p>
+<h3 id="register-of-rollouts">Register of rollouts<a class="headerlink" href="#register-of-rollouts" title="Permanent link">&para;</a></h3>
+<p>The <em>Rollout List</em> exhibit every <em>Rollouts</em> available for the <em>Product</em> chosen and a brief information about them, such as name, version, creation, status and progress.</p>
+<p align="center">
+  <img src="../../img/updatehub-cloud/package-rollout/rolloutList.png">
+</p>
+
+<h3 id="detailing-a-rollout">Detailing a rollout<a class="headerlink" href="#detailing-a-rollout" title="Permanent link">&para;</a></h3>
+<p>The <strong>UpdateHub</strong> also gives all the information in details of each specific <em>Rollout</em>, allowing a complete overview of the individual process. Among the information displayed inside the <em>Rollout Details</em> you will find:</p>
+<ul>
+<li><em>Version</em>: the version of <em>Rollout</em> that the <em>Device</em> will receive</li>
+<li><em>Creation Date</em>: the date that the <em>Rollout</em> was created</li>
+<li><em>Tasks</em>: this area shows the each task that is part of the <em>Rollout</em>. Each task includes a number of information, such as:<ul>
+<li><em>Number of Devices</em>: all the <em>Devices</em> available for the <em>Rollout</em>, including the number of process concluded, failed, and remaining in one or various tasks are displayed here</li>
+<li><em>Fault tolerance</em>: that's the percentage limit of failures which can occur during the <em>Rollout</em> until the <strong>UpdateHub</strong> aborts the running rollout process, including any pending tasks</li>
+</ul>
+</li>
+<li><em>Play/Pause Rollout</em>: whenever the user wants to play or pause the <em>Rollout</em> the option is available, unless the process is aborted or the user chooses to archive it</li>
+<li><em>Archive the Rollout</em>: once the rollout is not necessary anymore it can be archived and stopped definitely</li>
+</ul>
+<p align="center">
+  <img src="../../img/updatehub-cloud/package-rollout/rolloutDetails.png">
+</p>
+                
+                  
+                
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+        
+          <a href="../device/" title="Handling a Device" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+            </div>
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                Handling a Device
+              </span>
+            </div>
+          </a>
+        
+        
+          <a href="../menu/" title="Your menu account" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                Your menu account
+              </span>
+            </div>
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+          <div class="md-footer-copyright__highlight">
+            Copyright &copy; 2020 O.S. Systems
+          </div>
+        
+        powered by
+        <a href="https://www.mkdocs.org">MkDocs</a>
+        and
+        <a href="https://squidfunk.github.io/mkdocs-material/">
+          Material for MkDocs</a>
+      </div>
+      
+  <div class="md-footer-social">
+    <link rel="stylesheet" href="../../assets/fonts/font-awesome.css">
+    
+      <a href="https://github.com/OSSystems" class="md-footer-social__link fa fa-github"></a>
+    
+      <a href="https://twitter.com/OSSystemsNews?s=20" class="md-footer-social__link fa fa-twitter"></a>
+    
+      <a href="https://www.linkedin.com/company/ossystems" class="md-footer-social__link fa fa-linkedin"></a>
+    
+  </div>
+
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../../assets/javascripts/application.808e90bb.js"></script>
+      
+      <script>app.initialize({version:"1.0.4",url:{base:"../.."}})</script>
+      
+    
+  </body>
+</html>

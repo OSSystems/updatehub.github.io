@@ -1,0 +1,811 @@
+
+
+
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      <meta http-equiv="x-ua-compatible" content="ie=edge">
+      
+        <meta name="description" content="All your devices, always updated">
+      
+      
+      
+      
+        <meta name="lang:clipboard.copy" content="Copy to clipboard">
+      
+        <meta name="lang:clipboard.copied" content="Copied to clipboard">
+      
+        <meta name="lang:search.language" content="en">
+      
+        <meta name="lang:search.pipeline.stopwords" content="True">
+      
+        <meta name="lang:search.pipeline.trimmer" content="True">
+      
+        <meta name="lang:search.result.none" content="No matching documents">
+      
+        <meta name="lang:search.result.one" content="1 matching document">
+      
+        <meta name="lang:search.result.other" content="# matching documents">
+      
+        <meta name="lang:search.tokenizer" content="[\s\-]+">
+      
+      <link rel="shortcut icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.6.0">
+    
+    
+      
+        <title>Yocto Project guide - UpdateHub</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/application.1b62728e.css">
+      
+        <link rel="stylesheet" href="../../assets/stylesheets/application-palette.a8b3c06d.css">
+      
+      
+        
+        
+        <meta name="theme-color" content="#3f51b5">
+      
+    
+    
+      <script src="../../assets/javascripts/modernizr.268332fc.js"></script>
+    
+    
+      
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
+      
+    
+    <link rel="stylesheet" href="../../assets/fonts/material-icons.css">
+    
+      <link rel="manifest" href="../../manifest.webmanifest">
+    
+    
+    
+      
+        
+<script>
+  window.ga = window.ga || function() {
+    (ga.q = ga.q || []).push(arguments)
+  }
+  ga.l = +new Date
+  /* Setup integration and send page view */
+  ga("create", "UA-XXXXXXXX-X", "auto")
+  ga("set", "anonymizeIp", true)
+  ga("send", "pageview")
+  /* Register handler to log search on blur */
+  document.addEventListener("DOMContentLoaded", () => {
+    if (document.forms.search) {
+      var query = document.forms.search.query
+      query.addEventListener("blur", function() {
+        if (this.value) {
+          var path = document.location.pathname;
+          ga("send", "pageview", path + "?q=" + this.value)
+        }
+      })
+    }
+  })
+</script>
+<script async src="https://www.google-analytics.com/analytics.js"></script>
+      
+    
+    
+  </head>
+  
+    
+    
+    <body dir="ltr" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    <svg class="md-svg">
+      <defs>
+        
+        
+          <svg xmlns="http://www.w3.org/2000/svg" width="416" height="448" viewBox="0 0 416 448" id="__github"><path fill="currentColor" d="M160 304q0 10-3.125 20.5t-10.75 19T128 352t-18.125-8.5-10.75-19T96 304t3.125-20.5 10.75-19T128 256t18.125 8.5 10.75 19T160 304zm160 0q0 10-3.125 20.5t-10.75 19T288 352t-18.125-8.5-10.75-19T256 304t3.125-20.5 10.75-19T288 256t18.125 8.5 10.75 19T320 304zm40 0q0-30-17.25-51T296 232q-10.25 0-48.75 5.25Q229.5 240 208 240t-39.25-2.75Q130.75 232 120 232q-29.5 0-46.75 21T56 304q0 22 8 38.375t20.25 25.75 30.5 15 35 7.375 37.25 1.75h42q20.5 0 37.25-1.75t35-7.375 30.5-15 20.25-25.75T360 304zm56-44q0 51.75-15.25 82.75-9.5 19.25-26.375 33.25t-35.25 21.5-42.5 11.875-42.875 5.5T212 416q-19.5 0-35.5-.75t-36.875-3.125-38.125-7.5-34.25-12.875T37 371.5t-21.5-28.75Q0 312 0 260q0-59.25 34-99-6.75-20.5-6.75-42.5 0-29 12.75-54.5 27 0 47.5 9.875t47.25 30.875Q171.5 96 212 96q37 0 70 8 26.25-20.5 46.75-30.25T376 64q12.75 25.5 12.75 54.5 0 21.75-6.75 42 34 40 34 99.5z"/></svg>
+        
+      </defs>
+    </svg>
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
+    
+      <a href="#yocto-project-guide" tabindex="1" class="md-skip">
+        Skip to content
+      </a>
+    
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <a href="../.." title="UpdateHub" class="md-header-nav__button md-logo">
+          
+            <img src="../../img/assets/favicon.ico" width="24" height="24">
+          
+        </a>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="__drawer"></label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
+          
+            <span class="md-header-nav__topic">
+              UpdateHub
+            </span>
+            <span class="md-header-nav__topic">
+              
+                Yocto Project guide
+              
+            </span>
+          
+        </div>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        
+          <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
+          
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
+      <label class="md-icon md-search__icon" for="__search"></label>
+      <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
+        &#xE5CD;
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result">
+          <div class="md-search-result__meta">
+            Type to start searching
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+        
+      </div>
+      
+        <div class="md-flex__cell md-flex__cell--shrink">
+          <div class="md-header-nav__source">
+            
+
+
+  
+
+<a href="https://github.com/UpdateHub/updatehub.github.io/" title="Go to repository" class="md-source" data-md-source="github">
+  
+    <div class="md-source__icon">
+      <svg viewBox="0 0 24 24" width="24" height="24">
+        <use xlink:href="#__github" width="24" height="24"></use>
+      </svg>
+    </div>
+  
+  <div class="md-source__repository">
+    UpdateHub/updatehub.github.io
+  </div>
+</a>
+          </div>
+        </div>
+      
+    </div>
+  </nav>
+</header>
+    
+    <div class="md-container">
+      
+        
+      
+      
+        
+
+  
+
+<nav class="md-tabs md-tabs--active" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  <li class="md-tabs__item">
+    
+      <a href="../.." class="md-tabs__link">
+        Introduction
+      </a>
+    
+  </li>
+
+      
+        
+      
+        
+      
+        
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../updatehub-cloud/dashboard/" class="md-tabs__link">
+          Using UpdateHub Cloud
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="./" class="md-tabs__link md-tabs__link--active">
+          Integrating with Yocto Project
+        </a>
+      
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+      
+      <main class="md-main" role="main">
+        <div class="md-main__inner md-grid" data-md-component="container">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" data-md-level="0">
+  <label class="md-nav__title md-nav__title--site" for="__drawer">
+    <a href="../.." title="UpdateHub" class="md-nav__button md-logo">
+      
+        <img src="../../img/assets/favicon.ico" width="48" height="48">
+      
+    </a>
+    UpdateHub
+  </label>
+  
+    <div class="md-nav__source">
+      
+
+
+  
+
+<a href="https://github.com/UpdateHub/updatehub.github.io/" title="Go to repository" class="md-source" data-md-source="github">
+  
+    <div class="md-source__icon">
+      <svg viewBox="0 0 24 24" width="24" height="24">
+        <use xlink:href="#__github" width="24" height="24"></use>
+      </svg>
+    </div>
+  
+  <div class="md-source__repository">
+    UpdateHub/updatehub.github.io
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../.." title="Introduction" class="md-nav__link">
+      Introduction
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../what-is-updatehub/" title="What is UpdateHub" class="md-nav__link">
+      What is UpdateHub
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../quick-starting-with-raspberrypi3/" title="Quick starting with Raspberry Pi 3" class="md-nav__link">
+      Quick starting with Raspberry Pi 3
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../faq/faq-questions/" title="FAQ" class="md-nav__link">
+      FAQ
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5">
+    
+    <label class="md-nav__link" for="nav-5">
+      Using UpdateHub Cloud
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-5">
+        Using UpdateHub Cloud
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../updatehub-cloud/dashboard/" title="UpdateHub Cloud dashboard" class="md-nav__link">
+      UpdateHub Cloud dashboard
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../updatehub-cloud/product/" title="Managing a Product" class="md-nav__link">
+      Managing a Product
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../updatehub-cloud/device/" title="Handling a Device" class="md-nav__link">
+      Handling a Device
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../updatehub-cloud/package-rollout/" title="Package and Rollout" class="md-nav__link">
+      Package and Rollout
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../updatehub-cloud/menu/" title="Your menu account" class="md-nav__link">
+      Your menu account
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-6" type="checkbox" id="nav-6" checked>
+    
+    <label class="md-nav__link" for="nav-6">
+      Integrating with Yocto Project
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-6">
+        Integrating with Yocto Project
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Yocto Project guide
+      </label>
+    
+    <a href="./" title="Yocto Project guide" class="md-nav__link md-nav__link--active">
+      Yocto Project guide
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#first-step-adding-layer" class="md-nav__link">
+    First step: adding layer
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#create-project-from-scratch" class="md-nav__link">
+    Create project from scratch
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#integrating-onto-a-existing-project" class="md-nav__link">
+    Integrating onto a existing project
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#second-step-creating-a-product" class="md-nav__link">
+    Second step: creating a product
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#third-step-requesting-an-access-key" class="md-nav__link">
+    Third step: requesting an access key
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#fourth-step-configuring-the-variables" class="md-nav__link">
+    Fourth step: configuring the variables
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#fifth-step-in-your-board" class="md-nav__link">
+    Fifth step: in your board
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sixth-step-sending-a-package-to-server" class="md-nav__link">
+    Sixth step: sending a package to server
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../yocto-project-reference/" title="Yocto Project reference" class="md-nav__link">
+      Yocto Project reference
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../glossary/" title="Glossary of variables" class="md-nav__link">
+      Glossary of variables
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#first-step-adding-layer" class="md-nav__link">
+    First step: adding layer
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#create-project-from-scratch" class="md-nav__link">
+    Create project from scratch
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#integrating-onto-a-existing-project" class="md-nav__link">
+    Integrating onto a existing project
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#second-step-creating-a-product" class="md-nav__link">
+    Second step: creating a product
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#third-step-requesting-an-access-key" class="md-nav__link">
+    Third step: requesting an access key
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#fourth-step-configuring-the-variables" class="md-nav__link">
+    Fourth step: configuring the variables
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#fifth-step-in-your-board" class="md-nav__link">
+    Fifth step: in your board
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sixth-step-sending-a-package-to-server" class="md-nav__link">
+    Sixth step: sending a package to server
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                  <a href="https://github.com/UpdateHub/updatehub.github.io/edit/master/docs/yocto-project/yocto-project-guide.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
+                
+                
+                <h1 id="yocto-project-guide">Yocto Project guide<a class="headerlink" href="#yocto-project-guide" title="Permanent link">&para;</a></h1>
+<p>Here we have a guide with the necessary steps for adding UpdateHub, either in a project that already exists or in a new project. Each step provides a brief description of the process that must be performed and a link to a section with more detailed information about this process.</p>
+<p>Before you start, we ask you to check if your <a href="../yocto-project-reference/#supported-version">board is supported</a> by UpdateHub.</p>
+<div class="admonition info">
+<p>If your board still does not have support or you encounter difficulties we will be happy to assist you through our <a href="https://gitter.im/UpdateHub/community?utm_source=share-link&amp;utm_medium=link&amp;utm_campaign=share-link">Gitter</a> or contact us at contact@updatehub.io</p>
+</div>
+<h2 id="first-step-adding-layer">First step: adding layer<a class="headerlink" href="#first-step-adding-layer" title="Permanent link">&para;</a></h2>
+<h3 id="create-project-from-scratch">Create project from scratch<a class="headerlink" href="#create-project-from-scratch" title="Permanent link">&para;</a></h3>
+<p>For the creation of a project that already has the necessary layers to support <strong>UpdateHub</strong> we recommend <a href="../yocto-project-reference/#using-updatehub-platform">using the platform</a> that will download and add the necessary layers automatically, allowing you to start your implementation quickly.</p>
+<h3 id="integrating-onto-a-existing-project">Integrating onto a existing project<a class="headerlink" href="#integrating-onto-a-existing-project" title="Permanent link">&para;</a></h3>
+<p>In a finished or under development project, the way to integrate UpdateHub is done by <a href="../yocto-project-reference/#adding-layer-to-your-project">adding layers directly</a>.</p>
+<h2 id="second-step-creating-a-product">Second step: creating a product<a class="headerlink" href="#second-step-creating-a-product" title="Permanent link">&para;</a></h2>
+<p><a href="../../updatehub-cloud/#how-to-create-a-product">Create a <em>Product</em></a> is necessary for some variables such as the product identifier to be generated. These variables must be included in the image that will be generated so that the device has the necessary data to be authorized on the UpdateHub server when accessing it.</p>
+<div class="admonition warning">
+<p class="admonition-title">To create a product you need to be logged into your <a href="https://dashboard.updatehub.io/"><strong>UpdateHub Cloud</strong> account</a>.</p>
+</div>
+<h2 id="third-step-requesting-an-access-key">Third step: requesting an access key<a class="headerlink" href="#third-step-requesting-an-access-key" title="Permanent link">&para;</a></h2>
+<p>Access key is a variable that Updatehub uses to guarantee the authenticity of a device when it requests access to the server.</p>
+<p><a href="../../updatehub-cloud/#requesting-a-access-key">Generating an Access Key</a> is easy and after just putting it in a project's settings before the image that will be loaded on the devices is generated.</p>
+<div class="admonition warning">
+<p class="admonition-title">Just like creating a product, creating a access key takes place within the <a href="https://dashboard.updatehub.io/"><em>Dashboard</em></a></p>
+</div>
+<h2 id="fourth-step-configuring-the-variables">Fourth step: configuring the variables<a class="headerlink" href="#fourth-step-configuring-the-variables" title="Permanent link">&para;</a></h2>
+<p>Here we show <a href="../yocto-project-reference/#configurating-updatehub-variables">how to setting up the <strong>UpdateHub</strong> variables</a> necessary for the correct functioning of UpdateHub. Definitions of variables as well as other variables can be found in the <a href="../glossary">Glossary of variables</a>.</p>
+<h2 id="fifth-step-in-your-board">Fifth step: in your board<a class="headerlink" href="#fifth-step-in-your-board" title="Permanent link">&para;</a></h2>
+<p>After adding the necessary layers and configuring the variables now just generate the image with the bitbake command, save the image on the target devices and that's it!</p>
+<h2 id="sixth-step-sending-a-package-to-server">Sixth step: sending a package to server<a class="headerlink" href="#sixth-step-sending-a-package-to-server" title="Permanent link">&para;</a></h2>
+<p>When changes occur in the original image that is present in devices in the field, it is necessary to update these devices by <a href="../yocto-project-reference/#pushing-an-update-package">sending the package</a> with the changed image to the UpdateHub server for it to be applied.</p>
+<p><strong>Congratulations! Your UpdateHub support is up and running.</strong></p>
+<p>Can't run a tutorial step? Please contact us at <a href="https://gitter.im/UpdateHub/community?utm_source=share-link&amp;utm_medium=link&amp;utm_campaign=share-link">Gitter</a> so we can help you.</p>
+                
+                  
+                
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+        
+          <a href="../../updatehub-cloud/menu/" title="Your menu account" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+            </div>
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                Your menu account
+              </span>
+            </div>
+          </a>
+        
+        
+          <a href="../yocto-project-reference/" title="Yocto Project reference" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                Yocto Project reference
+              </span>
+            </div>
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+          <div class="md-footer-copyright__highlight">
+            Copyright &copy; 2020 O.S. Systems
+          </div>
+        
+        powered by
+        <a href="https://www.mkdocs.org">MkDocs</a>
+        and
+        <a href="https://squidfunk.github.io/mkdocs-material/">
+          Material for MkDocs</a>
+      </div>
+      
+  <div class="md-footer-social">
+    <link rel="stylesheet" href="../../assets/fonts/font-awesome.css">
+    
+      <a href="https://github.com/OSSystems" class="md-footer-social__link fa fa-github"></a>
+    
+      <a href="https://twitter.com/OSSystemsNews?s=20" class="md-footer-social__link fa fa-twitter"></a>
+    
+      <a href="https://www.linkedin.com/company/ossystems" class="md-footer-social__link fa fa-linkedin"></a>
+    
+  </div>
+
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../../assets/javascripts/application.808e90bb.js"></script>
+      
+      <script>app.initialize({version:"1.0.4",url:{base:"../.."}})</script>
+      
+    
+  </body>
+</html>
